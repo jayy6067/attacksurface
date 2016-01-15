@@ -1,6 +1,6 @@
 #!/bin/bash
 # Proxmark3 setup script
-# https://attacksurface.io/go/pm3-guide
+# https://attacksurface.io/go/pm3
 
 if grep -q "Ubuntu 14.04" /etc/issue; then
 	echo "Ubuntu 14.04 detected, continuing"
