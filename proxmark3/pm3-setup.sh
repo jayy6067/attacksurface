@@ -21,7 +21,7 @@ echo "Installing requirements with sudo"
 
 sudo apt-get -y install build-essential ubuntu-restricted-extras ubuntu-restricted-addons \
 						p7zip git libreadline5 libreadline-dev libusb-0.1-4 libusb-dev \
-						libqt4-dev perl pkg-config wget
+						libqt4-dev perl pkg-config wget xz
 
 if [ -d /opt/devkitpro/devkitARM ]; then
 	echo "Existing ARM development kit installation detected, skipping installation"
@@ -32,13 +32,13 @@ else
 	DLFN=$(mktemp)
 
 	if [ $BITTINESS = "64" ]; then
-		DLURL=http://sourceforge.net/projects/devkitpro/files/devkitARM/previous/devkitARM_r41-x86_64-linux.tar.bz2/download
+		DLURL=https://attacksurface.io/f/pm3/devkitARM_r41-x86_64-linux.tar.xz
 	else
-		DLURL=http://sourceforge.net/projects/devkitpro/files/devkitARM/previous/devkitARM_r41-i686-linux.tar.bz2/download
+		DLURL=https://attacksurface.io/f/pm3/devkitARM_r41-i686-linux.tar.xz
 	fi
 	wget $DLURL -O $DLFN
 	cd /opt/devkitpro
-	sudo tar xjf $DLFN
+	sudo tar xf $DLFN
 	rm -f $DLFN
 	export PATH=${PATH}:/opt/devkitpro/devkitARM/bin/
 	echo 'PATH=${PATH}:/opt/devkitpro/devkitARM/bin/ ' >> ~/.bashrc
