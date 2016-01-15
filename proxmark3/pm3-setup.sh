@@ -21,7 +21,7 @@ echo "Installing requirements with sudo"
 
 sudo apt-get -y install build-essential ubuntu-restricted-extras ubuntu-restricted-addons \
 						p7zip git libreadline5 libreadline-dev libusb-0.1-4 libusb-dev \
-						libqt4-dev perl pkg-config wget xz
+						libqt4-dev perl pkg-config wget xz-utils
 
 if [ -d /opt/devkitpro/devkitARM ]; then
 	echo "Existing ARM development kit installation detected, skipping installation"
