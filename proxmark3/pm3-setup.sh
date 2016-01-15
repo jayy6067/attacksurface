@@ -1,6 +1,7 @@
 #!/bin/bash
 # Proxmark3 setup script
 # https://attacksurface.io/go/pm3
+# Report bugs at https://github.com/daveio/attacksurface/issues
 
 if grep -q "Ubuntu 14.04" /etc/issue; then
 	echo "Ubuntu 14.04 detected, continuing"
